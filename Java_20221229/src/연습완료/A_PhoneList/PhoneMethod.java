@@ -1,4 +1,4 @@
-package 연습완료;
+package 연습완료.A_PhoneList;
 
 import java.util.ArrayList;
 import java.util.List;

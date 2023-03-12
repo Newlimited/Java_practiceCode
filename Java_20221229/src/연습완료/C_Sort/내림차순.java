@@ -1,4 +1,4 @@
-package 연습완료;
+package 연습완료.C_Sort;
 
 import java.util.Arrays;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package 연습완료;
+package 연습완료.A_PhoneList;
 
 import lombok.Builder;
 import lombok.Data;

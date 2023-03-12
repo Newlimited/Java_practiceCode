@@ -1,4 +1,4 @@
-package 연습완료;
+package 연습완료.B_Coffee;
 
 import java.awt.RenderingHints.Key;
 import java.util.HashMap;
