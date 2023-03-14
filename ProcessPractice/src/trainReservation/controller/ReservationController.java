@@ -12,7 +12,8 @@ import trainReservation.service.ReservationService;
 // 사용자로 부터 입력받는 기능/ 입력받은 데이터를 검증하는 기능 / 비즈니스로직의 결과를 반환
 public class ReservationController {
 	
-	private static DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+	private static DateTimeFormatter timeFormatter 
+			= DateTimeFormatter.ofPattern("HH:mm");
 	
 	private ReservationService reservationService;
 	
