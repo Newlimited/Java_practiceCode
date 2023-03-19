@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class Customer {
 	private  String name;
-	private  int kindOfReservation;
+	private  String kindOfReservation;
 	private  int people;
 	private String kindsOfRoom;
 	
 	public Customer() {
 	}
 
-	public Customer(String name, int kindOfReservation, int people, String kindsOfRoom) {
+	public Customer(String name, String kindOfReservation, int people, String kindsOfRoom) {
 		this.name = name;
 		this.kindOfReservation = kindOfReservation;
 		this.people = people;
@@ -26,11 +26,11 @@ public class Customer {
 		this.name = name;
 	}
 
-	public int getKindOfReservation() {
+	public String getKindOfReservation() {
 		return kindOfReservation;
 	}
 
-	public void setKindOfReservation(int kindOfReservation) {
+	public void setKindOfReservation(String kindOfReservation) {
 		this.kindOfReservation = kindOfReservation;
 	}
 
@@ -52,17 +52,15 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		String result = null;
 		int addCost = 0;
-		if(kindOfReservation == 1)  result = "대실";
-		if(kindOfReservation == 2)  result = "숙박";
 		if(people > 2) {
 			addCost = 10_000*(people - 2);
 		}
 		
-		return "[예약자 이름=" + name + ", 예약종류 =" + result + ", 인원수 =" + people
+		return "[예약자 이름=" + name + ", 예약종류 =" + kindOfReservation  + ", 인원수 =" + people
 				+ ", 객실 형태 =" + kindsOfRoom.toUpperCase() + "] " + "추가요금 : " + addCost + "원 입니다";
 	}
 
+	
 		
 }
