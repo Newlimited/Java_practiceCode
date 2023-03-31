@@ -1,43 +1,40 @@
 package HotelReservation.RoomInfo;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class RoomInfo {
-	private String kindsOfRoomClass;
-	private int KindOfReservation;
-	private int Cost;
-
-	public RoomInfo(String kindsOfRoomClass, int kindOfReservation, int cost) {
-		this.kindsOfRoomClass = kindsOfRoomClass;
-		this.KindOfReservation = kindOfReservation;
-		this.Cost = cost;
-	}
-
+	private String KindOfRooms;
+	private String kindOfReservation;
+	private int costOfRoom;
+	
 	public RoomInfo() {
 	}
-
-	public int getKindOfReservation() {
-		return KindOfReservation;
+	public RoomInfo(String kindOfRooms, String kindOfReservation, int costOfRoom) {
+		KindOfRooms = kindOfRooms;
+		this.kindOfReservation = kindOfReservation;
+		this.costOfRoom = costOfRoom;
 	}
-
-	public void setKindOfReservation(int kindOfReservation) {
-		KindOfReservation = kindOfReservation;
+	public String getKindOfReservation() {
+		return kindOfReservation;
 	}
-
-	public String getKindsOfRoomClass() {
-		return kindsOfRoomClass;
+	public void setKindOfReservation(String kindOfReservation) {
+		this.kindOfReservation = kindOfReservation;
 	}
-
-	public void setKindsOfRoomClass(String kindsOfRoomClass) {
-		this.kindsOfRoomClass = kindsOfRoomClass;
+	public String getKindOfRooms() {
+		return KindOfRooms;
 	}
-
-	public int getCost() {
-		return Cost;
+	public void setKindOfRooms(String kindOfRooms) {
+		KindOfRooms = kindOfRooms;
 	}
-
-	public void setCost(int cost) {
-		Cost = cost;
+	public int getCostOfRoom() {
+		return costOfRoom;
 	}
+	public void setCostOfRoom(int costOfRoom) {
+		this.costOfRoom = costOfRoom;
+	}
+	@Override
+	public String toString() {
+		return "RoomInfo [KindOfRooms=" + KindOfRooms + ", kindOfReservation=" + kindOfReservation + ", costOfRoom="
+				+ costOfRoom + "]";
+	}
+	
+	
 }
