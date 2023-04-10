@@ -142,7 +142,7 @@ SELECT
     name AS 'Full Name'
 FROM
     Custom;
-    
+
     # 테이블에 별칭 사용
     SELECT C.name
     From Custom AS C;
@@ -198,8 +198,8 @@ WHERE email LIKE '%gmail%';
 # 제약조건
 
 #create 문에서 작성 예시
-CREATE TABLE NotnullTable (
-    notnull_field INT NOT NULL
+CREATE TABLE NotnullTable1 (
+	notnull_field INT NOT NULL
 );
 
 #Alter 문에서 작성     
@@ -207,7 +207,7 @@ CREATE TABLE NotnullTable (
 # 해당 필드의 데이터가 Null이 존재하면 안됨
  CREATE TABLE NotnullTable (
     notnull_field INT 
-);
+); 
 ALTER TABLE NotnullTable1
 MODIFY COLUMN notnull_field INT NOT NULL;
 
@@ -413,6 +413,68 @@ SELECT *
 FROM namgu
 ORDER BY 세대수 DESC;
 
-# 오름차순 ASC
+# 오름차순 ASC;
 SELECT * FROM Namgu
 ORDER BY 통 DESC, 반 ASC;
+
+# VIEW
+# 복잡한 쿼리문 (SELECT)을 미리 작성해두고 재사용 할 수 있도록 해주는
+# 읽기 전용의 가상 테이블
+
+# 읽기 전용이므로 테이블의 삽입, 수정, 삭제 작업의 제약을 걸 때 사용가능하다.
+# CREAT VIEW 뷰이름 AS
+# SELECT 필드이름~~ FROM 테이블  WHERE 조건
+
+CREATE VIEW JOIN_RESULT AS
+SELECT R.room_number AS '방번호', C.name AS '고객이름'
+FROM Room R INNER JOIN Custom C 
+ON C.id = R.custom_id;
+
+SELECT * FROM JOIN_RESULT
+WHERE 방번호= 1002;
+
+# ALTER VIEW 뷰이름 AS  
+# SELECT 필드이름~~ FROM 테이블
+
+ALTER VIEW JOIN_RESULT AS
+SELECT R.room_number AS '방번호', C.name AS '고객이름', C.email AS '고객이메일'
+FROM Room R INNER JOIN Custom C 
+ON C.id = R.custom_id;
+
+SELECT * FROM JOIN_RESULT;
+
+# 뷰삭제
+# DROP VIEW 뷰이름
+DROP VIEW join_result;
+
+# INDEX
+# 테이블의 검색속도를 향상 시켜주는 기능을 담당하는 요소
+# 인덱스가 적용되어있는 필드의 경우 해당 필드를 조건으로 검색을 시도 할 때 
+# 검색속도가 향상됨 
+
+# 인덱스가 적용되어있는 필드를 수정할 경우 인덱스도 함께 변경되어
+# 검색 속도에 영향을 미칠 수 있음
+# CREATE INDEX 인덱스명
+# ON 테이블명 (필드명, ...);
+
+CREATE INDEX seadeasu_index
+ON namgu (세대수); 
+# 인덱스를 걸어 놨으면 오롯이 세대수를 가지고 검색 할 때만...
+
+# SHOW INDEX FROM 테이블명
+# 해당 테이블의 인덱스를 볼수 있음
+SHOW INDEX FROM namgu;
+
+CREATE INDEX seadeasu_index2
+ON namgu (세대수, 인구수, 통); 
+
+CREATE UNIQUE INDEX seadeasu_unique_index
+on namgu (세대수);
+
+namgu
+
+
+
+
+
+

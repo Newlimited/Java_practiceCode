@@ -44,3 +44,31 @@ SELECT * FROM namgu WHERE 인구수 >= 10000 AND (18세이상인구수 <= 12000 
 SELECT * FROM namgu WHERE (인구수 >= 10000 AND 18세이상인구수 <= 12000 )OR 반 >= 100;
 
 # 테이블 직접 만들어보거나 데이터 찾아보고.... 뭐 
+
+SELECT count(면적), max(세대수), min(세대수) #count , max , min 내장함수
+# count는 전체 갯수 
+FROM Namgu;
+
+SELECT * FROM namgu;
+# ex 면적 3 , 4 인애들의 갯수 , 등등... 면적 1인애들중에 세대수가 최대인것, 최소인것을 보고싶다 할적엔 where에선 방법이없다.
+# 그래도 한다면..... 아래와 같다.
+SELECT count(면적), max(세대수), min(세대수)
+FROM Namgu
+WHERE 면적 = 1;
+# 단 이것은 면적만 본다 그래서 GROUP BY를 사용하여 묶어버린다.
+
+SELECT 면적, count(*), max(세대수), min(세대수)
+FROM namgu
+#WHERE 면적 = 1
+GROUP BY 면적;
+
+# Group by 되지 않은 필드는 HAVING에 사용 불가능
+SELECT 면적, count(*), max(세대수), min(세대수)
+FROM namgu
+GROUP BY 면적
+HAVING max(세대수) >= 5000
+ORDER BY 면적;
+
+
+
+

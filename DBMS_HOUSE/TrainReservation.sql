@@ -24,7 +24,7 @@ CREATE TABLE Train (
 
 CREATE TABLE Station (
     station_number INT AUTO_INCREMENT PRIMARY KEY,
-    station_name VARCHAR(50) NOT NULL,
+    station_nume VARCHAR(50) NOT NULL,
     address VARCHAR(500) NOT NULL UNIQUE,
     tel_number VARCHAR(15) NOT NULL UNIQUE
 );
@@ -88,5 +88,3 @@ ALTER TABLE STOP_STATION
 ADD CONSTRAINT stop_station_foreign_key_2
 FOREIGN KEY (train_number)
 REFERENCES TRAIN (train_number)
-
-
