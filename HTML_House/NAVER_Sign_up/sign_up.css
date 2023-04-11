@@ -1,21 +1,18 @@
-
 #wrap {
     min-width: 250px;
     width: 100%;
 }
-.main{
+.content{
     width: auto;
     max-width: 768px;
-    min-width: 220px;
-    margin: 0 15px;
-    box-sizing: border-box;
+    
+    
 }
 body{
-    
     font-family:Dotum,'돋음', Helvetica, sans-serif;
     font-size: 12px;
     -webkit-text-size-adjust: none;
-    margin: 0;
+    margin: 0 auto;
     max-width: 768px;
     min-width: 460px;
     box-sizing: border-box;
@@ -25,7 +22,7 @@ input{
     padding: 0;
     cursor: pointer;
 }
-form{
+#join-form{
     margin: 0;
     padding: 0;
     -webkit-text-size-adjust: none;
@@ -59,12 +56,12 @@ h3{
 .h-logo{
    display: block;
    margin: 0 auto;
-   width: 165px;
-   height: 32px;
-   background-image: url(	https://ssl.pstatic.net/static/nid/join/m_logo_naver.png);
+   width: 240px;
+   height: 44px;
+   background-image: url(https://static.nid.naver.com/images/ui/join/m_naver_logo_20191126.png);
    background-repeat: no-repeat;
    background-position: 0 0;
-   background-size: 165px auto;
+   background-size: 240px auto;
    color: transparent;
    font-size: 0;
 }
@@ -92,7 +89,7 @@ h3{
     box-sizing: border-box;
     vertical-align: top;
 }
-.ps-box.int-id input{
+.ps-box .int-id input{
     background-color: #FFF;
     outline: 0;
 }
@@ -117,7 +114,7 @@ h3{
     line-height: 18px;
     color: #8e8e8e;
 }
-.ps-box .int-pass::after{
+.ps-box.int-pass::after{
     background-position: 0 0;
     content: '';
     display: inline-block;
@@ -131,7 +128,7 @@ h3{
     background-size: 125px 75px;
     cursor: pointer;
 }
-.ps-box .int-pass {
+.ps-box.int-pass {
     padding-right: 40px;
 }
 .wa-blind{
@@ -154,10 +151,10 @@ h3{
     color: #8e8e8e;
     z-index: 9;
 }
-.ps-box .int-pass-check{
+.ps-box.int-pass-check{
     padding-right: 40px;
 }
-.ps-box .int-pass-check::after{
+.ps-box.int-pass-check::after{
     content: '';
     display: inline-block;
     position: absolute;
@@ -217,3 +214,4 @@ h3{
 .join-birthday .ps-box{
     padding: 11px 14px;
 }
+
