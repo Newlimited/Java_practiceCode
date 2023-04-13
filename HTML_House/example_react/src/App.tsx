@@ -71,8 +71,10 @@ function App() {
                         </div>
                         <input type="password" 
                         className="input-text" 
-                        placeholder="비밀번호" 
-                        maxLength={16} name="pw" id="pw" />
+                        placeholder="비밀번호"
+                        maxLength={16} 
+                        
+                       />
                       </div>
 
                     </div>
@@ -117,7 +119,7 @@ function App() {
 
           <div className="banner-wrapper">
             <div className="banner-content">
-              <img className="banner-img" src="https://ssl.pstatic.net/melona/libs/1378/1378592/fe1b4bd9453e84b57ed7_20230407151920279.jpg" />
+              <img className="banner-img" src="https://ssl.pstatic.net/melona/libs/1378/1378592/fe1b4bd9453e84b57ed7_20230407151920279.jpg"/>
             </div>
           </div>
         </div>
@@ -146,7 +148,7 @@ function App() {
         </div>
 
       </div>
-    </>
+    </> 
   );
 }
 export default App;
