@@ -8,11 +8,10 @@ const nameInput = document.getElementById('name');
 const nameMessage = document.getElementById('nameMsg');
 const birthInput = document.getElementById('yy');
 const birthdayMessage = document.getElementById('birthdayMsg');
-const genderSelect = document.getElementById('gender');
+const genderInput = document.getElementById('gender')
 const genderMessage = document.getElementById('genderMsg');
 
-
-function showHiddenMessage(inputElement, messageElement) {
+function showMsg(inputElement, messageElement) {
   if (!inputElement.value) {
     messageElement.style.display = 'block';
   } else {
@@ -20,30 +19,24 @@ function showHiddenMessage(inputElement, messageElement) {
   }
 }
 function selecetMsg() {
-if(genderSelect.value === ""){
-    genderMessage.style.display = 'block';
+  if(genderInput.value ===''){
+     genderMessage.style.display = 'block';
   } else {
     genderMessage.style.display = 'none';
+    return;
   }
 }
 
-idInput.addEventListener('blur', function() {
-  showHiddenMessage(idInput, idMessage);
-});
-
 passwordInput.addEventListener('blur', function() {
-  showHiddenMessage(passwordInput, passwordMessage);
+    showMsg(passwordInput, passwordMessage);
 });
 password2Input.addEventListener('blur', function() {
-  showHiddenMessage(password2Input, password2Message);
+    showMsg(password2Input, password2Message);
 });
 nameInput.addEventListener('blur', function() {
-  showHiddenMessage(nameInput, nameMessage);
+    showMsg(nameInput, nameMessage);
 });
 birthInput.addEventListener('blur', function() {
-  showHiddenMessage(birthInput, birthdayMessage);
+    showMsg(birthInput, birthdayMessage);
 });
-
-genderInput.addEventListener('change', function() {
-  showHiddenMessage();
-});
+genderSelect.addEventListener('click', function(){selecetMsg()});
